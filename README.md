@@ -51,7 +51,7 @@ This project is a simple scientific calculator built with HTML, CSS, and JavaScr
 ## Project Structure
 
 ```
-calculator/public
+Calculator/public
 ├── index.html       # Main HTML file
 ├── style.css        # Stylesheet for calculator UI
 ├── script.js        # JavaScript for calculator logic
