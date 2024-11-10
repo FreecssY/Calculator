@@ -25,7 +25,7 @@ This project is a simple scientific calculator built with HTML, CSS, and JavaScr
    cd Calculator
    ```
 
-3. Open the `index.html` file in your preferred web browser to use the calculator.
+3. Open the `public/index.html` file in your preferred web browser to use the calculator.
 
 ## Usage
 
@@ -51,12 +51,24 @@ This project is a simple scientific calculator built with HTML, CSS, and JavaScr
 ## Project Structure
 
 ```
-Calculator/public
-├── index.html       # Main HTML file
-├── style.css        # Stylesheet for calculator UI
-├── script.js        # JavaScript for calculator logic
-└── README.md        # Project documentation
+calculator/
+├── index.js
+├── package.json
+├── package-lock.json
+├── public
+│   ├── index.html
+│   ├── script.js
+│   └── styles.css
+├── README.md
+└── routes
+    └── calculator.js
+
+3 directories, 8 files
 ```
+
+## Live Preview
+
+A live preview of the calculator is available here: [Live Preview](https://calculator-dun-pi.vercel.app/)
 
 ## Customization
 
@@ -74,3 +86,7 @@ Contributions are welcome! If you'd like to add more features or improve the pro
 
 - This project was built as a learning exercise for JavaScript, HTML, and CSS.
 - Inspired by classic scientific calculators with an easy-to-use interface.
+
+## Contact
+
+For any inquiries, please contact [freecssy31@gmail.com](mailto:freecssy31@gmail.com).
