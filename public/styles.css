@@ -7,7 +7,13 @@ body {
     height: 100vh;
     background: linear-gradient(to right, #1e3c72, #2a5298);
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
 }
 
 .calculator {
@@ -15,16 +21,29 @@ body {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
     width: 300px;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    background: #2a5298;
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 
-.calculator:hover {
-    transform: scale(1.05);
-}
-
-#display {
-    width: 100%;
+.display {
+    width: 95%; /* Updated to use width instead of padding for consistency */
     height: 50px;
     font-size: 1.5em;
     text-align: right;
@@ -33,9 +52,12 @@ body {
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    background-color: #fff;
+    overflow: auto;
+    line-height: 1.5;
 }
 
-.buttons {
+.buttons, .advanced-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -59,4 +81,44 @@ button:hover {
 
 button:active {
     background: #172b4d;
+}
+
+.advanced-buttons {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin-right: 20px;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.advanced-buttons.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.history {
+    width: 95%; /* Updated to use width instead of padding for consistency */
+    max-height: 150px;
+    font-size: 1.5em;
+    text-align: left;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+}
+
+.history-item {
+    font-size: 0.9em;
+    margin-bottom: 5px;
 }

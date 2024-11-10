@@ -7,26 +7,55 @@
     <title>Scientific Calculator</title>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" readonly>
-        <div class="buttons">
-            <!-- Basic operations -->
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button onclick="operate('add')">+</button>
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button onclick="operate('subtract')">-</button>
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button onclick="operate('multiply')">*</button>
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="appendNumber('0')">0</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="operate('divide')">/</button>
+    <div class="calculator-container">
+        <!-- Advanced Panel -->
+        <div class="advanced-buttons" id="advancedPanel">
+            <button onclick="appendOperation('^')">x<sup>y</sup></button>
+            <button onclick="appendOperation('sqrt(')">√</button>
+            <button onclick="appendOperation('sin(')">sin</button>
+            <button onclick="appendOperation('cos(')">cos</button>
+            <button onclick="appendOperation('tan(')">tan</button>
+            <button onclick="appendOperation('(')">(</button>
+            <button onclick="appendOperation(')')">)</button>
+            <button onclick="appendOperation('π')">π</button>
+            <div class="toggle-button" id="closeButton" onclick="toggleAdvancedPanel()">
+                <span>←</span>
+            </div>
+        </div>
+
+        <!-- Main Calculator -->
+        <div class="calculator">
+            <!-- Toggle Advanced Mode Button -->
+            <div class="toggle-button" id="toggleButton" onclick="toggleAdvancedPanel()">
+                <span>→</span>
+            </div>
+
+            <!-- History Section -->
+            <div class="history" id="history" style="display: none; resize: vertical;"></div>
+
+            <!-- Display -->
+            <div id="display" class="display"></div>
+
+            <!-- Calculator Buttons -->
+            <div class="buttons">
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendOperation('+')">+</button>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendOperation('-')">-</button>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendOperation('*')">*</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendOperation('/')">/</button>
+                <button onclick="deleteLast()">←</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
